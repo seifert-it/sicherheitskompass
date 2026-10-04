@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082f36">
+  <meta name="description" content="Ausführlicher IT-Sicherheitscheck für Kirchen, Vereine und soziale Einrichtungen mit Schulnote und druckbarer Checkliste.">
+  <title>Sicherheitskompass | seifert-it</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="brandbar">
+      <a class="brand" href="https://www.seifert-it.online/" target="_blank" rel="noopener">
+        <img src="logo_seifert-it.png" alt="">
+        <span><strong>seifert-it</strong><small>Sicherheit verständlich machen</small></span>
+      </a>
+      <span class="privacy">Keine Anmeldung · kein Tracking · keine Speicherung</span>
+    </header>
+    <main class="app">
+      <section class="welcome" id="welcome">
+        <div class="welcome-copy">
+          <p class="kicker">IT-Sicherheitscheck für kleine Organisationen</p>
+          <h1>Wie sicher ist <em>Ihr Alltag?</em></h1>
+          <p class="lead">Prüfen Sie die wichtigsten Bereiche Ihrer IT: von Zuständigkeiten und Konten bis zu Datensicherung und Notfällen. Sie erhalten eine verständliche Schulnote von 1 bis 6 und eine persönliche Checkliste zum Speichern als PDF.</p>
+          <div class="facts">
+            <span>◷ ca. 20–25 Minuten</span>
+            <span id="question-count">✓ ausführlicher Fragenkatalog</span>
+            <span>♢ Antworten bleiben im Browser</span>
+          </div>
+          <button class="button primary" id="start">Sicherheitscheck starten →</button>
+          <p class="fine">Die Themen orientieren sich am <a href="https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz_node.html" target="_blank" rel="noopener">BSI IT-Grundschutz</a>. Dieser vereinfachte Selbstcheck ist keine offizielle BSI-Prüfung oder Zertifizierung. Bitte geben Sie keine Namen, Passwörter oder anderen vertraulichen Daten ein.</p>
+        </div>
+        <div class="visual" aria-hidden="true">
+          <div class="compass">
+            <span class="direction north">N</span>
+            <span class="direction east">O</span>
+            <span class="direction south">S</span>
+            <span class="direction west">W</span>
+            <span class="needle"></span>
+            <span class="compass-center"></span>
+          </div>
+          <p class="visual-tagline">
+            <strong>Sicherheit braucht Orientierung.</strong>
+            <span>Finden Sie Ihren nächsten Schritt.</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="checker" id="checker" aria-labelledby="checker-title" hidden>
+        <div class="progressbar">
+          <strong id="progress-text"></strong>
+          <div class="track" role="progressbar" aria-label="Fortschritt" aria-valuemin="0" aria-valuenow="0">
+            <div id="progress-fill"></div>
+          </div>
+          <button class="reset-link" id="reset-top">Neu starten</button>
+        </div>
+        <div class="workspace">
+          <aside class="guide">
+            <p class="guide-title">Themen</p>
+            <nav id="topic-nav" aria-label="Themenübersicht"></nav>
+            <div class="tip">
+              <strong>So antworten Sie</strong>
+              <p>Wählen Sie „Ja“, wenn eine Maßnahme zuverlässig umgesetzt ist. „Teilweise“ gilt für Lücken oder Ausnahmen. „Unklar“ zählt als offener Prüfpunkt. „Nicht zutreffend“ wird nicht bewertet.</p>
+            </div>
+          </aside>
+          <div class="question-stage">
+            <p class="question-topic" id="question-topic"></p>
+            <div class="question-number" id="question-number"></div>
+            <h2 id="question" tabindex="-1"></h2>
+            <p class="question-help" id="question-help"></p>
+            <fieldset class="answers">
+              <legend>Wie ist es in Ihrer Organisation?</legend>
+              <div id="answers"></div>
+            </fieldset>
+            <div class="navigation">
+              <button class="button secondary" id="back">← Zurück</button>
+              <button class="button primary" id="next" disabled>Weiter →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="results" id="results" aria-labelledby="result-title" hidden>
+        <div class="result-intro">
+          <div class="small-compass" aria-hidden="true">✦</div>
+          <p class="kicker">Ihre Orientierung</p>
+          <h2 id="result-title" tabindex="-1">Ihr Sicherheitskompass</h2>
+          <p id="result-date"></p>
+        </div>
+        <div class="result-summary">
+          <div class="grade-box">
+            <span>Gesamtnote</span>
+            <strong id="grade"></strong>
+            <small id="grade-word"></small>
+          </div>
+          <div class="summary-copy">
+            <h3 id="summary-head"></h3>
+            <p id="summary-text"></p>
+            <p class="method" id="method"></p>
+          </div>
+        </div>
+        <div class="priority-box" id="priority-box">
+          <h3>Ihre ersten drei Schritte</h3>
+          <ol id="priorities"></ol>
+        </div>
+        <section class="category-results">
+          <h3>Ergebnisse nach Themen</h3>
+          <div id="category-scores"></div>
+        </section>
+        <section class="checklist">
+          <div class="section-head">
+            <h3>Ihre Checkliste</h3>
+            <p>Offene Punkte zuerst. Tragen Sie bei der Umsetzung eine zuständige Person und einen Termin ein.</p>
+          </div>
+          <div id="checklist"></div>
+        </section>
+        <p class="result-note">Die Themen orientieren sich am BSI IT-Grundschutz. Die Note beruht ausschließlich auf Ihren Selbstauskünften. Dieser Check ist keine offizielle BSI-Prüfung und ersetzt keine technische Prüfung, Datenschutzberatung oder Bewertung besonderer Anforderungen Ihrer Organisation.</p>
+        <div class="result-actions">
+          <button class="button primary" id="print">Checkliste als PDF speichern / drucken</button>
+          <button class="button secondary" id="edit">Antworten bearbeiten</button>
+          <button class="button secondary" id="restart">Neu starten</button>
+        </div>
+      </section>
+      <section class="about">
+        <details>
+          <summary>Bewertung und Datenschutz</summary>
+          <div>
+            <p>„Ja“ zählt als erfüllt, „Teilweise“ zur Hälfte, „Nein“ und „Unklar“ als offen. „Nicht zutreffend“ wird ausgelassen. Alle anwendbaren Fragen zählen gleich. Die Schulnote wird aus dem Erfüllungsgrad berechnet: 1 ab 90 %, 2 ab 75 %, 3 ab 60 %, 4 ab 45 %, 5 ab 25 %, sonst 6. Die Checkliste zeigt offene und erfüllte Punkte.</p>
+            <p>Die Antworten bleiben während der Nutzung im Arbeitsspeicher Ihres Browsers. Dieses Tool verwendet keine Cookies, Konten, Analysewerkzeuge oder externe Skripte. Beim Abruf der Website kann der Hosting-Anbieter technisch notwendige Verbindungsdaten verarbeiten. Beim PDF-Speichern öffnet sich der Druckdialog Ihres Browsers.</p>
+          </div>
+        </details>
+      </section>
+    </main>
+    <footer>Ein kostenloses Orientierungstool von seifert-it · <a href="https://www.seifert-it.online/" target="_blank" rel="noopener">seifert-it.online</a></footer>
+  </div>
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

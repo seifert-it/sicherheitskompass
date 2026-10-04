@@ -1,6 +1,6 @@
 # Sicherheitskompass für seifert-it
 
-Ein eigenständiges, responsives Webtool für Kirchen, Vereine und soziale Einrichtungen. Gestaltung und Farben orientieren sich an Phishing-Quiz und Photo-Check. Der Kompass ist als eigenes Motiv auf Startseite und Ergebnis eingebaut.
+Ein eigenständiges, responsives Webtool für Kirchen, Vereine und soziale Einrichtungen. 
 
 ## Funktionen
 

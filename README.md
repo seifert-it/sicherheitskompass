@@ -19,27 +19,6 @@ Alle anwendbaren Fragen zählen gleich: Ja = 1 Punkt, Teilweise = 0,5 Punkte, Ne
 
 Den gesamten Ordner auf einen statischen Webhost hochladen. `index.html`, `styles.css`, `questions.js`, `app.js`, `logo_seifert-it.png` und `favicon.svg` müssen nebeneinander liegen. Die Seite lässt sich auch lokal über `index.html` öffnen.
 
-### GitHub selbst einrichten
-
-1. Auf GitHub ein neues Repository, zum Beispiel `Sicherheitskompass`, anlegen.
-2. Die Dateien aus diesem Ordner in das Repository hochladen. Die Dateien gehören direkt ins Stammverzeichnis; `index.html` darf nicht in einem zusätzlichen Unterordner liegen.
-3. Falls das Tool über GitHub Pages erreichbar sein soll: In den Repository-Einstellungen unter **Pages** die Veröffentlichung aus dem Hauptbranch und dem Stammverzeichnis aktivieren.
-4. Die veröffentlichte URL im Browser öffnen und Fragebogen, Auswertung und PDF-Druck prüfen.
-
-Für eine öffentliche Einbindung auf der Homepage muss auch das Repository beziehungsweise die veröffentlichte Pages-Seite öffentlich erreichbar sein. Die Veröffentlichung nimmt die betreibende Person selbst vor.
-
-Nach Veröffentlichung kann die URL wie die bestehenden Tools in einen Jimdo-HTML-Block eingebunden werden:
-
-```html
-<iframe
-  src="https://IHRE-VEROEFFENTLICHTE-URL/"
-  title="Sicherheitskompass für Kirchen, Vereine und soziale Einrichtungen"
-  loading="lazy"
-  style="width:100%;height:1050px;border:0;border-radius:18px"
-></iframe>
-```
-
-Je nach Bildschirmbreite und geöffnetem Ergebnis kann innerhalb des eingebetteten Tools gescrollt werden. Die PDF-Funktion druckt das Tool-Dokument. Vor der öffentlichen Einbindung sollten die Darstellung in Jimdo und der PDF-Dialog am Computer und Smartphone geprüft werden.
 
 ## Inhaltliche Grundlage
 
